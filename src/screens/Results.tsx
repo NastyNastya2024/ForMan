@@ -25,6 +25,7 @@ export default function Results() {
   const blindSpots = lang === 'en' ? primaryArchetype.blindSpotsEn : primaryArchetype.blindSpotsRu
   const acceleration = lang === 'en' ? primaryArchetype.accelerationEn : primaryArchetype.accelerationRu
   const wealthModel = lang === 'en' ? primaryArchetype.wealthModelEn : primaryArchetype.wealthModelRu
+  const careerModel = lang === 'en' ? primaryArchetype.careerModelEn : primaryArchetype.careerModelRu
 
   return (
     <div className="screen results">
@@ -62,6 +63,11 @@ export default function Results() {
         <section className="results__block">
           <h2 className="results__heading">{t.wealthModel}</h2>
           <p className="results__text">{wealthModel}</p>
+        </section>
+
+        <section className="results__block">
+          <h2 className="results__heading">{t.careerModel}</h2>
+          <p className="results__text">{careerModel}</p>
         </section>
 
         <div className="results__top-traits">

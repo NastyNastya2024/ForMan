@@ -27,20 +27,21 @@ export default function Sports() {
 
   return (
     <Layout step={3} total={4} title={t.title} subtitle={t.subtitle}>
-      <div className="grid grid--sports">
+      <ul className="options-list">
         {SPORT_OPTIONS.map((opt) => (
-          <button
-            key={opt.id}
-            type="button"
-            className={`card card--select card--sport ${selected.has(opt.id) ? 'card--selected' : ''}`}
-            onClick={() => toggle(opt.id)}
-          >
-            <span className="card__icon">{opt.icon}</span>
-            <span className="card__label">{getLabel(opt)}</span>
-            {selected.has(opt.id) && <span className="card__check">✓</span>}
-          </button>
+          <li key={opt.id} className="options-list__item">
+            <label className="option-row">
+              <input
+                type="checkbox"
+                checked={selected.has(opt.id)}
+                onChange={() => toggle(opt.id)}
+                className="option-row__input"
+              />
+              <span className="option-row__text">{getLabel(opt)}</span>
+            </label>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className="screen-actions">
         <button className="btn btn--secondary" onClick={() => navigate('/razor')}>
           {navT.back}

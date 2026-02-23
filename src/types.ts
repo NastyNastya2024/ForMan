@@ -40,4 +40,6 @@ export interface Archetype {
   accelerationEn: string
   wealthModelRu: string
   wealthModelEn: string
+  careerModelRu: string
+  careerModelEn: string
 }

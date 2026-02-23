@@ -21,20 +21,21 @@ export default function Razor() {
 
   return (
     <Layout step={2} total={4} title={screenT.title} subtitle={screenT.subtitle}>
-      <div className="grid grid--razor">
+      <ul className="options-list">
         {RAZOR_OPTIONS.map((opt) => (
-          <button
-            key={opt.id}
-            type="button"
-            className={`card card--select ${selected.has(opt.id) ? 'card--selected' : ''}`}
-            onClick={() => toggle(opt.id)}
-          >
-            <span className="card__icon">{opt.icon}</span>
-            <span className="card__label">{(opt as Record<string, string>)[labelKey]}</span>
-            {selected.has(opt.id) && <span className="card__check">✓</span>}
-          </button>
+          <li key={opt.id} className="options-list__item">
+            <label className="option-row">
+              <input
+                type="checkbox"
+                checked={selected.has(opt.id)}
+                onChange={() => toggle(opt.id)}
+                className="option-row__input"
+              />
+              <span className="option-row__text">{(opt as Record<string, string>)[labelKey]}</span>
+            </label>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className="screen-actions">
         <button className="btn btn--secondary" onClick={() => navigate('/socks')}>
           {navT.back}
