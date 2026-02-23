@@ -173,8 +173,8 @@ export const ARCHETYPES: Record<ArchetypeKey, Archetype> = {
     blindSpotsEn: ['Excessive caution', 'Slow decisions under uncertainty'],
     accelerationRu: 'Добавьте быстрые эксперименты с малым бюджетом — тестируйте гипотезы без перегрузки плана.',
     accelerationEn: 'Add quick low-budget experiments — test hypotheses without overloading the plan.',
-    wealthModelRu: 'Диверсифицированный портфель + постепенное наращивание капитала. Подходит ПИФы, облигации, долевое участие в бизнесе с прозрачной структурой.',
-    wealthModelEn: 'Diversified portfolio + gradual capital growth. Suits mutual funds, bonds, equity in transparent businesses.',
+    wealthModelRu: 'Диверсифицированный портфель с постепенным наращиванием капитала. Рекомендуется: 40–50% облигации и фонды облигаций (государственные и корпоративные с высоким рейтингом), 30–40% акции через ПИФы или ETF широкого рынка, 10–20% долевое участие в бизнесе с прозрачной отчётностью и понятным exit. Ребалансировка раз в год. Документируйте цели по срокам и суммам, держите резерв на 6–12 месяцев расходов в ликвидности.',
+    wealthModelEn: 'Diversified portfolio with gradual capital growth. Recommended: 40–50% bonds and bond funds (government and investment-grade corporate), 30–40% equities via mutual funds or broad-market ETFs, 10–20% equity in businesses with transparent reporting and clear exit. Rebalance annually. Document time- and amount-based goals; keep 6–12 months of expenses in liquid reserves.',
   },
   bold_opportunist: {
     key: 'bold_opportunist',
@@ -188,8 +188,8 @@ export const ARCHETYPES: Record<ArchetypeKey, Archetype> = {
     blindSpotsEn: ['Impulsivity', 'Underestimating structure'],
     accelerationRu: 'Введите правило «10% на эксперименты» — выделяйте часть капитала на высокорисковые возможности при сохранении ядра.',
     accelerationEn: 'Apply a "10% for experiments" rule — allocate part of capital to high-risk opportunities while keeping the core.',
-    wealthModelRu: 'Рост через проекты с высокой отдачей и ограниченным сроком. Допустимы венчур, акции роста, собственный бизнес при чётком стоп-лоссе.',
-    wealthModelEn: 'Growth through high-return, time-bound projects. Venture, growth stocks, own business with clear stop-loss.',
+    wealthModelRu: 'Рост через проекты с высокой отдачей и ограниченным горизонтом. Правило: 60–70% — ядро (индексные фонды, облигации), 30–40% — «зона риска»: венчурные доли, акции роста, собственный или партнёрский бизнес. По каждой рисковой позиции задайте чёткий стоп-лосс (сумма или срок) и фиксируйте решение на бумаге. Раз в полгода пересматривайте «зону риска» и выводите прибыль в ядро. Не увеличивайте долю риска за счёт заёмных средств.',
+    wealthModelEn: 'Growth through high-return, time-bound projects. Rule: 60–70% core (index funds, bonds), 30–40% «risk zone» — venture stakes, growth stocks, own or partner business. For each risky position set a clear stop-loss (amount or date) and document the decision. Every six months review the risk zone and move profits into the core. Do not increase risk exposure with borrowed money.',
   },
   disciplined_executor: {
     key: 'disciplined_executor',
@@ -203,8 +203,8 @@ export const ARCHETYPES: Record<ArchetypeKey, Archetype> = {
     blindSpotsEn: ['Reluctance to change proven schemes', 'Risk of missing unconventional opportunities'],
     accelerationRu: 'Раз в квартал пробуйте один новый инструмент или подход — без ломки привычной системы.',
     accelerationEn: 'Try one new tool or approach per quarter — without breaking your usual system.',
-    wealthModelRu: 'Регулярные накопления, автоматизация инвестиций, консервативно-умеренный портфель с акцентом на стабильность.',
-    wealthModelEn: 'Regular savings, automated investing, conservative-moderate portfolio focused on stability.',
+    wealthModelRu: 'Регулярные накопления и автоматизация — основа модели. Рекомендации: фиксированный ежемесячный платёж на брокерский счёт или накопительный план (дата и сумма в календаре); консервативно-умеренный портфель: 50–60% облигации и фонды денежного рынка, 30–40% дивидендные акции и широкие индексные ETF, до 10% в более доходные, но проверенные инструменты. Раз в квартал — сверка с планом и ребалансировка. Резервный фонд на 6–12 месяцев в высоколиквидных активах. Не меняйте стратегию под краткосрочные новости.',
+    wealthModelEn: 'Regular savings and automation are the foundation. Recommendations: set a fixed monthly transfer to a brokerage or savings plan (date and amount in your calendar); conservative-moderate portfolio: 50–60% bonds and money market funds, 30–40% dividend stocks and broad index ETFs, up to 10% in higher-yield but proven instruments. Quarterly check against the plan and rebalancing. Keep 6–12 months of expenses in liquid reserves. Do not change strategy based on short-term news.',
   },
   creative_visionary: {
     key: 'creative_visionary',
@@ -218,8 +218,8 @@ export const ARCHETYPES: Record<ArchetypeKey, Archetype> = {
     blindSpotsEn: ['Scattered across many ideas', 'Difficulty with routine'],
     accelerationRu: 'Фиксируйте одну главную цель на квартал и делегируйте исполнение деталей.',
     accelerationEn: 'Set one main goal per quarter and delegate execution details.',
-    wealthModelRu: 'Рост через проекты с сильной идеей и командой. Подходят долевое участие, краудфандинг, собственный продукт при наличии исполнительного партнёра.',
-    wealthModelEn: 'Growth through projects with a strong idea and team. Equity, crowdfunding, own product with an execution partner.',
+    wealthModelRu: 'Рост через проекты с сильной идеей и сильной командой. Рекомендуется: 50% стабильное ядро (облигации, индексные фонды), 50% «идея + исполнение» — долевое участие в стартапах или малом бизнесе с операционным партнёром, краудфандинг отобранных проектов, собственный продукт только при наличии человека, отвечающего за операции и сроки. Фиксируйте одну главную инвестиционную «историю» на год, не распыляйтесь. Пропишите критерии выхода и решите, какую долю прибыли переводите в ядро.',
+    wealthModelEn: 'Growth through projects with a strong idea and strong execution team. Recommended: 50% stable core (bonds, index funds), 50% «idea + execution» — equity in startups or small business with an operational partner, curated crowdfunding, own product only if someone owns operations and deadlines. Commit to one main investment «story» per year; avoid spreading thin. Define exit criteria and decide what share of profits you move back into the core.',
   },
   adaptive_competitor: {
     key: 'adaptive_competitor',
@@ -233,8 +233,8 @@ export const ARCHETYPES: Record<ArchetypeKey, Archetype> = {
     blindSpotsEn: ['Burnout risk under high load', 'Need clear prioritization'],
     accelerationRu: 'Чётко разделяйте «стратегические» и «тактические» решения — не смешивайте уровни.',
     accelerationEn: 'Clearly separate "strategic" and "tactical" decisions — do not mix levels.',
-    wealthModelRu: 'Комбинированная модель: стабильное ядро (недвижимость, облигации) + доля в растущих активах и проектах с личным участием.',
-    wealthModelEn: 'Combined model: stable core (real estate, bonds) + stake in growing assets and projects with personal involvement.',
+    wealthModelRu: 'Комбинированная модель с явным разделением. Ядро (60%): недвижимость с предсказуемым доходом, облигации, индексные ETF — минимальное ручное управление. Рост (40%): доли в растущих компаниях, проекты с вашим личным вкладом (экспертиза, сеть), но с чётким лимитом времени и денег. Раз в квартал пересматривайте оба блока; прибыль из «роста» частично переводите в ядро. Не допускайте, чтобы активное участие съедало всё время — зафиксируйте верхнюю границу часов в месяц.',
+    wealthModelEn: 'Combined model with clear separation. Core (60%): real estate with predictable yield, bonds, index ETFs — minimal hands-on management. Growth (40%): stakes in growing companies, projects with your personal input (expertise, network), but with clear time and money limits. Review both buckets quarterly; move part of growth profits into the core. Do not let active involvement consume all your time — set a cap on hours per month.',
   },
   analytical_architect: {
     key: 'analytical_architect',
@@ -248,8 +248,8 @@ export const ARCHETYPES: Record<ArchetypeKey, Archetype> = {
     blindSpotsEn: ['Analysis paralysis', 'Slow reaction to fast changes'],
     accelerationRu: 'Установите дедлайны на ключевые решения и допускайте «достаточно хорошие» данные вместо идеальных.',
     accelerationEn: 'Set deadlines for key decisions and allow "good enough" data instead of perfect.',
-    wealthModelRu: 'Системный подход: аллокация по правилам, ребалансировка, использование технологичных платформ и инструментов аналитики.',
-    wealthModelEn: 'Systematic approach: rules-based allocation, rebalancing, use of tech platforms and analytics tools.',
+    wealthModelRu: 'Системный подход с правилами и автоматизацией. Задайте целевые доли по классам активов (например 50/30/20) и ребалансировку по календарю или по отклонению портфеля от цели (порог в %). Используйте технологичные платформы для учёта, аналитики и исполнения. Все решения по смене правил — только на основе данных и по заранее описанным критериям; установите дедлайн для каждой такой проверки (например раз в полгода), чтобы избежать бесконечного анализа. Резерв и страховка рисков заложите в правила с самого начала.',
+    wealthModelEn: 'Systematic approach with rules and automation. Set target weights by asset class (e.g. 50/30/20) and rebalance on a schedule or when the portfolio drifts from target by a set %. Use tech platforms for tracking, analytics, and execution. Any change to the rules only based on data and pre-defined criteria; set a deadline for each review (e.g. twice a year) to avoid endless analysis. Build reserves and risk insurance into the rules from the start.',
   },
 }
 
