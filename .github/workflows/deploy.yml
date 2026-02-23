@@ -28,7 +28,7 @@ jobs:
       - name: Install and build
         run: npm ci && npm run build
         env:
-          GITHUB_PAGES: true
+          BASE_PATH: /${{ github.event.repository.name }}/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
