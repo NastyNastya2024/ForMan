@@ -53,11 +53,40 @@ a {
 
 .screen.welcome {
   background: var(--bg-deep);
+  position: relative;
 }
 
 .welcome__content {
   max-width: 32rem;
   text-align: center;
+}
+
+.lang-switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.lang-switch__btn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+}
+
+.lang-switch__btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.lang-switch__btn--active {
+  border-color: var(--accent-steel);
+  color: var(--accent-steel);
 }
 
 .welcome__title {

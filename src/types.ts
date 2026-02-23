@@ -29,9 +29,15 @@ export type ArchetypeKey =
 export interface Archetype {
   key: ArchetypeKey
   titleRu: string
+  titleEn: string
   descriptionRu: string
+  descriptionEn: string
   strengthsRu: string[]
+  strengthsEn: string[]
   blindSpotsRu: string[]
+  blindSpotsEn: string[]
   accelerationRu: string
+  accelerationEn: string
   wealthModelRu: string
+  wealthModelEn: string
 }

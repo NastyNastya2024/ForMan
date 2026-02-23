@@ -1,26 +1,29 @@
 import type { TraitScores } from '../types'
+import type { Lang } from '../i18n/lang'
 import { RADAR_AXES } from '../scoring'
+import { radarLabels } from '../i18n/translations'
 
 interface RadarChartProps {
   traits: TraitScores
+  lang: Lang
   size?: number
 }
 
-export default function RadarChart({ traits, size = 240 }: RadarChartProps) {
+export default function RadarChart({ traits, lang, size = 240 }: RadarChartProps) {
   const axes = RADAR_AXES
+  const labels = radarLabels[lang]
   const n = axes.length
   const center = size / 2
   const radius = center - 24
 
   const points = axes.map(({ key }, i) => {
-    const value = traits[key as keyof TraitScores]
+    const value = traits[key]
     const num = typeof value === 'number' ? value / 100 : 0.5
     const r = radius * num
     const angle = (Math.PI * 2 * i) / n - Math.PI / 2
     return {
       x: center + r * Math.cos(angle),
       y: center + r * Math.sin(angle),
-      label: axes[i].label,
     }
   })
 
@@ -35,12 +38,12 @@ export default function RadarChart({ traits, size = 240 }: RadarChartProps) {
   })
 
   const labelRadius = radius + 20
-  const labelPoints = axes.map(({ label }, i) => {
+  const labelPoints = axes.map(({ key }, i) => {
     const angle = (Math.PI * 2 * i) / n - Math.PI / 2
     return {
       x: center + labelRadius * Math.cos(angle),
       y: center + labelRadius * Math.sin(angle),
-      label,
+      label: labels[key] ?? key,
     }
   })
 
