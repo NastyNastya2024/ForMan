@@ -1,15 +1,134 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Профиль личности и успеха</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ваш профиль успеха</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Экран 1: Главная -->
+    <section id="screen-welcome" class="screen screen--welcome active">
+      <div class="lang-switch">
+        <button type="button" class="lang-switch__btn lang-switch__btn--active" data-lang="ru" aria-pressed="true">Русский</button>
+        <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">English</button>
+      </div>
+      <div class="welcome__content">
+        <h1 class="welcome__title" data-i18n="welcomeTitle">Ваш профиль успеха</h1>
+        <p class="welcome__subtitle" data-i18n="welcomeSubtitle">Носки, бритва, спорт — за простым выбором скрывается ваш стиль решений и сильные стороны. Узнайте себя через то, что выбираете.</p>
+        <button type="button" class="btn btn--primary" data-next="screen-socks" data-i18n="welcomeCta">Начать</button>
+      </div>
+    </section>
+
+    <!-- Экран 2: Носки -->
+    <section id="screen-socks" class="screen screen--layout">
+      <div class="layout__wrap">
+        <div class="progress" aria-hidden="true">
+          <span class="progress__dot progress__dot--active"></span>
+          <span class="progress__dot"></span>
+          <span class="progress__dot"></span>
+          <span class="progress__dot"></span>
+        </div>
+        <h1 class="layout__title" data-i18n="socksTitle">Выберите носки</h1>
+        <p class="layout__subtitle" data-i18n="socksSubtitle">Один или несколько вариантов.</p>
+        <ul class="options-list" id="options-socks" role="listbox"></ul>
+        <div class="screen-actions">
+          <button type="button" class="btn btn--secondary" data-prev="screen-welcome" data-i18n="navBack">Назад</button>
+          <button type="button" class="btn btn--primary" data-next="screen-razor" disabled data-i18n="navNext">Далее</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Экран 3: Бритва -->
+    <section id="screen-razor" class="screen screen--layout">
+      <div class="layout__wrap">
+        <div class="progress" aria-hidden="true">
+          <span class="progress__dot progress__dot--active"></span>
+          <span class="progress__dot progress__dot--active"></span>
+          <span class="progress__dot"></span>
+          <span class="progress__dot"></span>
+        </div>
+        <h1 class="layout__title" data-i18n="razorTitle">Выберите бритву</h1>
+        <p class="layout__subtitle" data-i18n="razorSubtitle">Один или несколько вариантов.</p>
+        <ul class="options-list" id="options-razor" role="listbox"></ul>
+        <div class="screen-actions">
+          <button type="button" class="btn btn--secondary" data-prev="screen-socks" data-i18n="navBack">Назад</button>
+          <button type="button" class="btn btn--primary" data-next="screen-sports" disabled data-i18n="navNext">Далее</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Экран 4: Спорт -->
+    <section id="screen-sports" class="screen screen--layout">
+      <div class="layout__wrap">
+        <div class="progress" aria-hidden="true">
+          <span class="progress__dot progress__dot--active"></span>
+          <span class="progress__dot progress__dot--active"></span>
+          <span class="progress__dot progress__dot--active"></span>
+          <span class="progress__dot"></span>
+        </div>
+        <h1 class="layout__title" data-i18n="sportsTitle">Выберите виды активности</h1>
+        <p class="layout__subtitle" data-i18n="sportsSubtitle">Один или несколько вариантов.</p>
+        <ul class="options-list" id="options-sports" role="listbox"></ul>
+        <div class="screen-actions">
+          <button type="button" class="btn btn--secondary" data-prev="screen-razor" data-i18n="navBack">Назад</button>
+          <button type="button" class="btn btn--primary" data-next="screen-results" disabled data-i18n="showResults">Показать результат</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Экран 5: Результаты -->
+    <section id="screen-results" class="screen screen--results">
+      <div class="results__inner">
+        <h1 class="results__archetype" id="result-title"></h1>
+        <p class="results__description" id="result-description"></p>
+        <div class="results__radar" id="result-radar"></div>
+        <section class="results__block">
+          <h2 class="results__heading" data-i18n="strengths">Сильные стороны</h2>
+          <ul class="results__list" id="result-strengths"></ul>
+        </section>
+        <section class="results__block">
+          <h2 class="results__heading" data-i18n="blindSpots">Слепые зоны</h2>
+          <ul class="results__list results__list--muted" id="result-blindspots"></ul>
+        </section>
+        <section class="results__block">
+          <h2 class="results__heading" data-i18n="acceleration">Стратегия ускорения</h2>
+          <p class="results__text" id="result-acceleration"></p>
+        </section>
+        <section class="results__block">
+          <h2 class="results__heading" data-i18n="wealthModel">Рекомендуемая модель накопления</h2>
+          <p class="results__text" id="result-wealth"></p>
+        </section>
+        <section class="results__block">
+          <h2 class="results__heading" data-i18n="careerModel">Карьера и направление бизнеса</h2>
+          <p class="results__text" id="result-career"></p>
+        </section>
+        <section class="results__block">
+          <h2 class="results__heading" data-i18n="lifeStrategy">Общие жизненные стратегии</h2>
+          <p class="results__text" id="result-life"></p>
+        </section>
+        <section class="results__block">
+          <h2 class="results__heading" data-i18n="traitsToDevelop">Сильные стороны для развития</h2>
+          <ul class="results__list" id="result-traits-develop"></ul>
+        </section>
+        <div class="results__top-traits" id="result-top-traits"></div>
+        <div class="screen-actions results__actions">
+          <button type="button" class="btn btn--secondary" data-prev="screen-sports" data-i18n="navBack">Назад</button>
+          <button type="button" class="btn btn--primary" data-restart data-i18n="restart">Пройти заново</button>
+        </div>
+        <div class="results__footer">
+          <button type="button" class="btn btn--ghost" id="btn-share" data-i18n="share">Поделиться</button>
+          <button type="button" class="btn btn--ghost" id="btn-save" data-i18n="save">Сохранить</button>
+          <button type="button" class="btn btn--accent" id="btn-premium" data-i18n="premiumCta">Расширенный отчёт</button>
+          <span class="results__footer-msg" id="footer-msg" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
 </html>
