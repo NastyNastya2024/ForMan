@@ -51,13 +51,15 @@ export const sportsScreen: Record<Lang, { title: string; subtitle: string }> = {
   },
 }
 
-export const resultsScreen: Record<Lang, { strengths: string; blindSpots: string; acceleration: string; wealthModel: string; careerModel: string; topTraits: string; back: string; restart: string; share: string; save: string; premiumCta: string }> = {
+export const resultsScreen: Record<Lang, { strengths: string; blindSpots: string; acceleration: string; wealthModel: string; careerModel: string; lifeStrategy: string; traitsToDevelop: string; topTraits: string; back: string; restart: string; share: string; save: string; premiumCta: string }> = {
   ru: {
     strengths: 'Сильные стороны',
     blindSpots: 'Слепые зоны',
     acceleration: 'Стратегия ускорения',
     wealthModel: 'Рекомендуемая модель накопления',
     careerModel: 'Карьера и направление бизнеса',
+    lifeStrategy: 'Общие жизненные стратегии',
+    traitsToDevelop: 'Сильные стороны для развития',
     topTraits: 'Топ-3 черты',
     back: 'Назад',
     restart: 'Пройти заново',
@@ -71,6 +73,8 @@ export const resultsScreen: Record<Lang, { strengths: string; blindSpots: string
     acceleration: 'Acceleration strategy',
     wealthModel: 'Recommended wealth-building model',
     careerModel: 'Career & business direction',
+    lifeStrategy: 'General life strategies',
+    traitsToDevelop: 'Strengths to develop',
     topTraits: 'Top 3 traits',
     back: 'Back',
     restart: 'Start over',

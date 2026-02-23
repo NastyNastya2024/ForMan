@@ -42,4 +42,8 @@ export interface Archetype {
   wealthModelEn: string
   careerModelRu: string
   careerModelEn: string
+  lifeStrategyRu: string
+  lifeStrategyEn: string
+  traitsToDevelopRu: string[]
+  traitsToDevelopEn: string[]
 }

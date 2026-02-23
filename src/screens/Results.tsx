@@ -26,6 +26,8 @@ export default function Results() {
   const acceleration = lang === 'en' ? primaryArchetype.accelerationEn : primaryArchetype.accelerationRu
   const wealthModel = lang === 'en' ? primaryArchetype.wealthModelEn : primaryArchetype.wealthModelRu
   const careerModel = lang === 'en' ? primaryArchetype.careerModelEn : primaryArchetype.careerModelRu
+  const lifeStrategy = lang === 'en' ? primaryArchetype.lifeStrategyEn : primaryArchetype.lifeStrategyRu
+  const traitsToDevelop = lang === 'en' ? primaryArchetype.traitsToDevelopEn : primaryArchetype.traitsToDevelopRu
 
   return (
     <div className="screen results">
@@ -68,6 +70,20 @@ export default function Results() {
         <section className="results__block">
           <h2 className="results__heading">{t.careerModel}</h2>
           <p className="results__text">{careerModel}</p>
+        </section>
+
+        <section className="results__block">
+          <h2 className="results__heading">{t.lifeStrategy}</h2>
+          <p className="results__text">{lifeStrategy}</p>
+        </section>
+
+        <section className="results__block">
+          <h2 className="results__heading">{t.traitsToDevelop}</h2>
+          <ul className="results__list">
+            {traitsToDevelop.map((s, i) => (
+              <li key={i}>{s}</li>
+            ))}
+          </ul>
         </section>
 
         <div className="results__top-traits">
