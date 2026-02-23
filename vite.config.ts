@@ -7,5 +7,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   plugins: [react()],
+  base: process.env.GITHUB_PAGES === 'true' ? '/game/' : '/',
   resolve: { alias: { '@': path.resolve(__dirname, 'src') } },
 })

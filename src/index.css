@@ -7,11 +7,23 @@
   --text-primary: #e8e8ea;
   --text-secondary: #9a9aa2;
   --text-muted: #6b6b72;
-  --accent-gold: #b8a574;
-  --accent-steel: #5c7a9e;
   --border: #2e2e32;
   --radius: 6px;
   --font: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Apple-style UI kit */
+  --apple-blue: #0A84FF;
+  --apple-blue-hover: #409CFF;
+  --apple-blue-active: #0051D5;
+  --apple-gray-5: rgba(255, 255, 255, 0.12);
+  --apple-gray-4: rgba(255, 255, 255, 0.08);
+  --apple-gray-3: rgba(255, 255, 255, 0.05);
+  --apple-tint: #64D2FF;
+  --apple-secondary-label: rgba(235, 235, 245, 0.6);
+  --apple-tertiary: rgba(235, 235, 245, 0.45);
+  --apple-fill-secondary: rgba(255, 255, 255, 0.15);
+  --apple-fill-tertiary: rgba(255, 255, 255, 0.08);
+  --apple-accent-gold: #FFD60A;
+  --apple-accent-gold-hover: #FFE55C;
 }
 
 * {
@@ -37,7 +49,7 @@ button {
 }
 
 a {
-  color: var(--accent-steel);
+  color: var(--apple-blue);
   text-decoration: none;
 }
 
@@ -85,8 +97,8 @@ a {
 }
 
 .lang-switch__btn--active {
-  border-color: var(--accent-steel);
-  color: var(--accent-steel);
+  border-color: var(--apple-blue);
+  color: var(--apple-blue);
 }
 
 .welcome__title {
@@ -98,66 +110,78 @@ a {
 }
 
 .welcome__subtitle {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  font-size: 1.2rem;
+  color: var(--text-primary);
   margin: 0 0 2rem;
-  line-height: 1.6;
+  line-height: 1.65;
+  font-weight: 500;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Buttons */
+/* Buttons — Apple Human Interface Guidelines */
 .btn {
   padding: 0.75rem 1.5rem;
-  border-radius: var(--radius);
-  font-size: 0.9rem;
+  border-radius: 10px;
+  font-size: 0.9375rem;
   font-weight: 600;
   border: none;
-  transition: background 0.2s, transform 0.15s, border-color 0.2s;
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 .btn--primary {
-  background: var(--accent-steel);
-  color: var(--bg-deep);
+  background: var(--apple-blue);
+  color: #fff;
 }
 
 .btn--primary:hover:not(:disabled) {
-  background: #6d8ab5;
-  transform: translateY(-1px);
+  background: var(--apple-blue-hover);
+}
+
+.btn--primary:active:not(:disabled) {
+  background: var(--apple-blue-active);
 }
 
 .btn--secondary {
-  background: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
+  background: var(--apple-fill-secondary);
+  color: var(--text-primary);
+  border: none;
 }
 
 .btn--secondary:hover:not(:disabled) {
-  border-color: var(--text-muted);
-  color: var(--text-primary);
+  background: var(--apple-gray-5);
+}
+
+.btn--secondary:active:not(:disabled) {
+  background: var(--apple-gray-4);
 }
 
 .btn--ghost {
   background: transparent;
-  color: var(--text-secondary);
+  color: var(--apple-secondary-label);
   border: none;
 }
 
 .btn--ghost:hover {
   color: var(--text-primary);
+  background: var(--apple-fill-tertiary);
 }
 
 .btn--accent {
-  background: var(--accent-gold);
-  color: var(--bg-deep);
+  background: var(--apple-accent-gold);
+  color: #000;
   border: none;
 }
 
 .btn--accent:hover {
-  filter: brightness(1.1);
+  background: var(--apple-accent-gold-hover);
 }
 
 /* Layout (steps) */
@@ -183,7 +207,7 @@ a {
 }
 
 .progress__dot--active {
-  background: var(--accent-steel);
+  background: var(--apple-blue);
 }
 
 .layout__title {
@@ -233,7 +257,7 @@ a {
 .option-row__input {
   width: 1.125rem;
   height: 1.125rem;
-  accent-color: var(--accent-steel);
+  accent-color: var(--apple-blue);
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -266,7 +290,7 @@ a {
   font-weight: 700;
   letter-spacing: 0.02em;
   margin: 0 0 0.5rem;
-  color: var(--accent-gold);
+  color: var(--apple-accent-gold);
 }
 
 .results__description {
@@ -363,4 +387,11 @@ a {
 .results__footer .btn {
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
+}
+
+.results__footer-msg {
+  font-size: 0.85rem;
+  color: var(--apple-blue);
+  align-self: center;
+  margin-left: auto;
 }

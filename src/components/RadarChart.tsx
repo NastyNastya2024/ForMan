@@ -71,9 +71,9 @@ export default function RadarChart({ traits, lang, size = 240 }: RadarChartProps
         })}
         <path
           d={pathD}
-          fill="var(--accent-steel)"
-          fillOpacity="0.25"
-          stroke="var(--accent-steel)"
+          fill="var(--apple-blue)"
+          fillOpacity="0.2"
+          stroke="var(--apple-blue)"
           strokeWidth="1.5"
         />
         {labelPoints.map((p, i) => (

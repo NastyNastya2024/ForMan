@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useProfiler } from '../context/ProfilerContext'
 import { useLanguage } from '../context/LanguageContext'
@@ -12,10 +12,17 @@ export default function Results() {
   const { traits, primaryArchetype } = state
   const t = resultsScreen[lang]
   const traitLabelsMap = traitLabels[lang]
+  const [footerMessage, setFooterMessage] = useState<string | null>(null)
 
   useEffect(() => {
     if (!traits || !primaryArchetype) navigate('/')
   }, [traits, primaryArchetype, navigate])
+
+  useEffect(() => {
+    if (!footerMessage) return
+    const id = window.setTimeout(() => setFooterMessage(null), 2000)
+    return () => clearTimeout(id)
+  }, [footerMessage])
 
   if (!traits || !primaryArchetype) return null
 
@@ -28,6 +35,67 @@ export default function Results() {
   const careerModel = lang === 'en' ? primaryArchetype.careerModelEn : primaryArchetype.careerModelRu
   const lifeStrategy = lang === 'en' ? primaryArchetype.lifeStrategyEn : primaryArchetype.lifeStrategyRu
   const traitsToDevelop = lang === 'en' ? primaryArchetype.traitsToDevelopEn : primaryArchetype.traitsToDevelopRu
+
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
+  const shareTitle = lang === 'en' ? 'My Success Profile' : 'Мой профиль успеха'
+  const shareText = `${title}\n${description}`
+
+  const handleShare = async () => {
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({
+          title: shareTitle,
+          text: shareText,
+          url: shareUrl,
+        })
+        setFooterMessage(t.shared)
+      } catch (err) {
+        copyToClipboard(shareUrl)
+      }
+    } else {
+      copyToClipboard(shareUrl)
+    }
+  }
+
+  const copyToClipboard = (text: string) => {
+    if (typeof navigator === 'undefined' || !navigator.clipboard) return
+    navigator.clipboard.writeText(text).then(() => setFooterMessage(t.copied))
+  }
+
+  const handleSave = () => {
+    const lines = [
+      title,
+      description,
+      '',
+      t.strengths,
+      ...strengths,
+      '',
+      t.blindSpots,
+      ...blindSpots,
+      '',
+      t.acceleration,
+      acceleration,
+      '',
+      t.wealthModel,
+      wealthModel,
+      '',
+      t.careerModel,
+      careerModel,
+      '',
+      t.lifeStrategy,
+      lifeStrategy,
+      '',
+      t.traitsToDevelop,
+      ...traitsToDevelop,
+      '',
+      shareUrl,
+    ]
+    copyToClipboard(lines.join('\n'))
+  }
+
+  const handlePremium = () => {
+    setFooterMessage(t.comingSoon)
+  }
 
   return (
     <div className="screen results">
@@ -105,15 +173,18 @@ export default function Results() {
         </div>
 
         <div className="results__footer">
-          <button type="button" className="btn btn--ghost">
+          <button type="button" className="btn btn--ghost" onClick={handleShare}>
             {t.share}
           </button>
-          <button type="button" className="btn btn--ghost">
+          <button type="button" className="btn btn--ghost" onClick={handleSave}>
             {t.save}
           </button>
-          <button type="button" className="btn btn--accent">
+          <button type="button" className="btn btn--accent" onClick={handlePremium}>
             {t.premiumCta}
           </button>
+          {footerMessage && (
+            <span className="results__footer-msg">{footerMessage}</span>
+          )}
         </div>
       </div>
     </div>

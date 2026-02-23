@@ -2,14 +2,14 @@ import type { Lang } from './lang'
 
 export const welcome: Record<Lang, { title: string; subtitle: string; cta: string }> = {
   ru: {
-    title: 'Профиль личности и успеха',
-    subtitle: 'Система определяет сильные стороны и стиль принятия решений через символический выбор продуктов. Не является финансовой консультацией.',
-    cta: 'Начать профилирование',
+    title: 'Ваш профиль успеха',
+    subtitle: 'Носки, бритва, спорт — за простым выбором скрывается ваш стиль решений и сильные стороны. Узнайте себя через то, что выбираете.',
+    cta: 'Начать',
   },
   en: {
-    title: 'Personality & Success Profile',
-    subtitle: 'The system identifies strengths and decision-making style through symbolic product choices. Not financial advice.',
-    cta: 'Start profiling',
+    title: 'Your Success Profile',
+    subtitle: 'Socks, razor, sports — behind simple choices lie your decision style and strengths. Discover yourself through what you choose.',
+    cta: 'Start',
   },
 }
 
@@ -21,37 +21,37 @@ export const nav: Record<Lang, { back: string; next: string; showResults: string
 export const socksScreen: Record<Lang, { title: string; subtitle: string }> = {
   ru: {
     title: 'Выберите носки',
-    subtitle: 'Один или несколько вариантов. Оцениваются креативность, структура и статусная чувствительность.',
+    subtitle: 'Один или несколько вариантов.',
   },
   en: {
     title: 'Choose socks',
-    subtitle: 'One or more options. Evaluates creativity, structure, and status sensitivity.',
+    subtitle: 'One or more options.',
   },
 }
 
 export const razorScreen: Record<Lang, { title: string; subtitle: string }> = {
   ru: {
     title: 'Выберите бритву',
-    subtitle: 'Оцениваются толерантность к риску, контроль и решительность.',
+    subtitle: 'Один или несколько вариантов.',
   },
   en: {
     title: 'Choose razor',
-    subtitle: 'Evaluates risk tolerance, control, and decisiveness.',
+    subtitle: 'One or more options.',
   },
 }
 
 export const sportsScreen: Record<Lang, { title: string; subtitle: string }> = {
   ru: {
     title: 'Выберите виды активности',
-    subtitle: 'Сила, стратегия, команда, выносливость, контроль. Можно несколько.',
+    subtitle: 'Один или несколько вариантов.',
   },
   en: {
     title: 'Choose activities',
-    subtitle: 'Strength, strategy, team, endurance, control. Multiple allowed.',
+    subtitle: 'One or more options.',
   },
 }
 
-export const resultsScreen: Record<Lang, { strengths: string; blindSpots: string; acceleration: string; wealthModel: string; careerModel: string; lifeStrategy: string; traitsToDevelop: string; topTraits: string; back: string; restart: string; share: string; save: string; premiumCta: string }> = {
+export const resultsScreen: Record<Lang, { strengths: string; blindSpots: string; acceleration: string; wealthModel: string; careerModel: string; lifeStrategy: string; traitsToDevelop: string; topTraits: string; back: string; restart: string; share: string; save: string; premiumCta: string; copied: string; shared: string; comingSoon: string }> = {
   ru: {
     strengths: 'Сильные стороны',
     blindSpots: 'Слепые зоны',
@@ -66,6 +66,9 @@ export const resultsScreen: Record<Lang, { strengths: string; blindSpots: string
     share: 'Поделиться',
     save: 'Сохранить',
     premiumCta: 'Расширенный отчёт',
+    copied: 'Скопировано',
+    shared: 'Поделено',
+    comingSoon: 'Скоро',
   },
   en: {
     strengths: 'Strengths',
@@ -81,6 +84,9 @@ export const resultsScreen: Record<Lang, { strengths: string; blindSpots: string
     share: 'Share',
     save: 'Save',
     premiumCta: 'Extended report',
+    copied: 'Copied',
+    shared: 'Shared',
+    comingSoon: 'Coming soon',
   },
 }
 
